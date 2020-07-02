@@ -46,8 +46,9 @@ root.resizable(0, 0)
 txt = StringVar()
 
 def init():
-    _url = 'http://test.xuebei.net.cn:8089/D1WebApiTest2/api/'
-    txt.set(_url+'CommonLogic/GetValidateAccountDMS')
+
+    _url = 'https://xxx/api/'
+    txt.set(_url+'User/login')
 
     headers = {
         'User-Agent': 'Mozilla/5.0',
@@ -55,10 +56,10 @@ def init():
     }
     txtHeader.delete(0.0, END)
     txtHeader.insert('insert', json.dumps(headers, indent=4))
-
+    
     kv = {
-        'username':	'cqty',
-        'password':	'7c4a8d09ca3762af61e59520943dc26494f8941b'
+        'username':	'admin',
+        'password':	'123456'
     }
     txtParams.delete(0.0, END)
     txtParams.insert('insert', json.dumps(kv, indent=4))
@@ -75,34 +76,6 @@ def execFun():
         content = r.text
         # print(r.request.headers)
         print(r.content)
-        print(content)
-        # txtRes.insert('insert', content)
-        txtRes.delete(0.0, END)
-        txtRes.insert(1.0, content)
-    except Exception as ex:
-        showinfo('message box', '执行错误：'+str(ex))
-
-
-def execFun1():
-    try:
-        _url = 'https://xxx/api/'
-        txt.set(_url+'User/login')
-        kv = {
-            'username':	'admin',
-            'password':	'123456'
-        }
-        txtParams.delete(0.0, END)
-        txtParams.insert('insert', json.dumps(kv, indent=4))
-        headers = {
-            'User-Agent': 'Mozilla/5.0',
-            'Content-Type': 'application/json'
-        }
-        txtHeader.delete(0.0, END)
-        txtHeader.insert('insert', json.dumps(headers, indent=4))
-        r = requests.get(url=txtUrl.get(), params=kv, headers=headers)
-        r.raise_for_status()
-        content = r.text
-        print(r.request.headers)
         print(content)
         # txtRes.insert('insert', content)
         txtRes.delete(0.0, END)
