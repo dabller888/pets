@@ -2,16 +2,21 @@
 
 #### pip安装与升级
 apt-get install python-pip
+
 pip -V
+
 python -m pip install --upgrade pip
 
 #### 安装shadowsocks
 pip install shadowsocks
+
 pip uninstall shadowsocks
 
 创建shadowsocks配置文件
 mkdir /etc/shadowsocks
+
 vim /etc/shadowsocks/shadowsocks.json
+
 {
     "server":"1.1.1.1",
     "server_port":1035,
@@ -28,6 +33,7 @@ ls /etc/shadowsocks/shadowsocks.json
 
 ##### 设置shadowsocks服务并开机启动
 sudo vim /etc/init.d/shadowsocks
+
 #!/bin/sh
 
 start(){
@@ -56,39 +62,54 @@ reload)
 esac
 
 sudo chmod +x /etc/init.d/shadowsocks
+
 sudo update-rc.d shadowsocks defaults
+
 sudo service shadowsocks {start|reload|stop}
 
 ##### 设置全局代理
 export ALL_PROXY=socks5://127.0.0.1:1080
+
 unset ALL_PROXY
 
 ##### 利用proxychains做全局代理
 vi /etc/proxychains.conf
+
 #socks4       127.0.0.1 9050
+
 #socks5  127.0.0.1 1080
+
 socks5       127.0.0.1 9050
 
 cp /usr/lib/proxychains3/proxyresolv /usr/bin/
+
 proxyresolv www.target.com
+
 proxyresolv www.google.com
 
 ##### 使用ProxyChains 启动firefox
 proxychains firefox
+
 proxychains msfconsole //启动msf
+
 proxychains sqlmap //通过代理启动sqlmap
+
 proxychains tor
 
 
 #### 安装tor
 $ sudo apt-get install tor
+
 tor官网下载tor https://www.torproject.org/download/
 
 $ wget https://www.torproject.org/dist/torbrowser/9.0.6/tor-browser-linux64-9.0.6_en-US.tar.xz
+
 $ tar -xvJf tor-browser-linux64-6.5.1_zh-cn.tar.xz
 
 cd tor-browser-linux64-6.5.1_zh-cn/Browser
+
 chown -R root:root *
+
 ./start
 
 #### 问题：
