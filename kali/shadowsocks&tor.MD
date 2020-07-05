@@ -65,8 +65,8 @@ unset ALL_PROXY
 
 ##### 利用proxychains做全局代理
 vi /etc/proxychains.conf
-#  socks4       127.0.0.1 9050
-#  socks5  127.0.0.1 1080
+#socks4       127.0.0.1 9050
+#socks5  127.0.0.1 1080
 socks5       127.0.0.1 9050
 
 cp /usr/lib/proxychains3/proxyresolv /usr/bin/

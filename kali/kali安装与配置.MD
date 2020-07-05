@@ -6,7 +6,7 @@ Kali Linux预装了许多渗透测试软件，包括nmap 、Wireshark 、John th
 2020年Kali Linux的最新版本为2020.2。
 
 ##### 安装
-可以到kali linux官方网站https://www.kali.org/下载对应平台镜像文件进行安装.
+可以到kali linux官方网站 https://www.kali.org/ 下载对应平台镜像文件进行安装.
 
 ##### 安装后需要做的事情
 ###### PC版本kali linux更新
@@ -14,7 +14,9 @@ Kali Linux预装了许多渗透测试软件，包括nmap 、Wireshark 、John th
 $vim /etc/apt/source.list
 
 deb https://mirrors.tuna.tsinghua.edu.cn/kali/ kali-rolling contrib main non-free
+
 更新
+
 $apt-get clean && apt-get update && apt-get upgrade && apt-get dist-upgrade
 
 ###### nethunter更新
@@ -24,7 +26,9 @@ $wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
 $vim /etc/apt/source.list
 
 deb https://mirrors.tuna.tsinghua.edu.cn/kali/ kali-rolling contrib main non-free
+
 更新
+
 $apt-get clean && apt-get update && apt-get upgrade && apt-get dist-upgrade
 
 ###### 开启服务
@@ -34,7 +38,7 @@ $service ssh start/stop
 
 $update-rc.d -f ssh defaults 
 
-##### 设置快捷键
+###### 设置快捷键
 设置→设备→键盘 中新建一个快捷键就好
 名称：开启终端 
 命令：gnome-terminal 
