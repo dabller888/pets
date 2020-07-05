@@ -34,6 +34,12 @@ $service ssh start/stop
 
 $update-rc.d -f ssh defaults 
 
+##### 设置快捷键
+设置→设备→键盘 中新建一个快捷键就好
+名称：开启终端 
+命令：gnome-terminal 
+快捷键： Ctrl + Alt + T （这个自己按就好）
+
 ###### rdesktop
 $apt-get install rdesktop
 用法： rdesktop[options] server[:port]    
